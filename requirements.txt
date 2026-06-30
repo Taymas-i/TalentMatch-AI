@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+alembic
+psycopg2-binary
+pydantic
+pydantic-settings
+instructor
+groq
+pdfplumber
+python-docx
+streamlit
+pytest
+pytest-asyncio
+tenacity
+python-dotenv
