@@ -1,10 +1,12 @@
-"""
-[ADIM 1.3]
+from pydantic import BaseModel
+from typing import Literal
+from app.schemas.internal import ExtractedCV, MatchAnalysis, TailoredExperience
 
-API dışarıya ne dönecek? SSE stream'de hangi event'ler gönderilecek?
+class StreamEvent(BaseModel):
+    event_type: Literal["extracting", "analyzing", "tailoring", "done", "error"]
+    data: dict
 
-Örnek:
-- StreamEvent(BaseModel): event_type: str (örn. "extracting", "analyzing", "tailoring", "done")
-                           data: dict
-- FinalResult(BaseModel): match_analysis: MatchAnalysis, tailored_cv: list[TailoredExperience]
-"""
+class FinalResult(BaseModel):
+    extracted_cv: ExtractedCV
+    match_analysis: MatchAnalysis
+    tailored_experiences: list[TailoredExperience]
