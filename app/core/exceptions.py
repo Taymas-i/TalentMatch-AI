@@ -1,11 +1,11 @@
-"""
-[ADIM 3]
+class RateLimitError(Exception):
+    pass
 
-Özel hata sınıfları.
+class LLMTimeoutError(Exception):
+    pass
 
-Örnek:
-- class RateLimitError(Exception): pass
-- class LLMTimeoutError(Exception): pass
-- class HallucinationGuardError(Exception): pass  # Tailor agent uydurma tespit ederse
-- class InvalidPDFError(Exception): pass
-"""
+class InvalidPDFEError(Exception):
+    pass
+
+class HallucinationGuardError(Exception):
+    pass
