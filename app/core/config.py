@@ -1,12 +1,19 @@
-"""
-[ADIM 2.1]
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-BaseSettings (pydantic-settings) ile .env dosyasını oku.
+class Settings(BaseSettings):
+    groq_api_key: str
+    postgres_user: str
+    postgres_password: str
+    postgres_db: str
+    postgres_port: int = 5432
 
-Örnek alanlar:
-- GROQ_API_KEY: str
-- DATABASE_URL: str
-- DAILY_REQUEST_LIMIT: int = 10  (SaaS değil ama "concurrency-safe" gösterimi için tutuyoruz)
-
-NOT: .env dosyasını ASLA git'e ekleme, .gitignore'a ekli olduğundan emin ol.
-"""
+    @property
+    def database_url(self) -> str:
+        return (
+            f"postgresql://{self.postgres_user}:{self.postgres_password}"
+            f"@localhost:{self.postgres_port}/{self.postgres_db}"
+        )
+    
+    model_config = SettingsConfigDict(env_file=".env")
+    
+settings = Settings()
