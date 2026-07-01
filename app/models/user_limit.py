@@ -1,9 +1,11 @@
-"""
-[ADIM 2.3] (opsiyonel - SaaS'tan kalan ama concurrency gösterimi için saklanabilir)
+from sqlalchemy import Column, Integer, Date, ForeignKey
+from datetime import date
+from app.models.base import Base
 
-Günlük istek sayacı. rate_limit.py servisindeki
-"SELECT FOR UPDATE" atomik kontrolünü burada uygulayacaksın.
-Bu dosyayı tamamen silmek de mantıklı bir seçenek - portföy odaklı
-gidiyorsan SaaS kredi mantığına gerek yok, ama "race condition'a
-karşı nasıl korunulur" bilgisini göstermek istiyorsan basitleştirip tut.
-"""
+class UserLimit(Base):
+    __tablename__ = "user_limits"
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    request_count = Column(Integer, default=0)
+    last_reset_date = Column(Date, default=date.today)
