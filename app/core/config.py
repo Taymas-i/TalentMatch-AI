@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     def database_url(self) -> str:
         return (
             f"postgresql://{self.postgres_user}:{self.postgres_password}"
-            f"@localhost:{self.postgres_port}/{self.postgres_db}"
+            f"@127.0.0.1:{self.postgres_port}/{self.postgres_db}"
         )
     
     model_config = SettingsConfigDict(env_file=".env")
