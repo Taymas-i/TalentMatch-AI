@@ -1,9 +1,11 @@
-"""
-[ADIM 4.2]
+from app.agents.base_agent import BaseAgent
+from app.schemas.internal import ExtractedCV
+from app.core.prompt_templates.extractor_prompts import EXTRACTOR_SYSTEM_PROMPT
 
-Ham CV metnini okur -> schemas/internal.py'deki ExtractedCV şemasına
-uygun JSON döner.
-
-Prompt: core/prompt_templates/extractor_prompts.py içinde olacak
-(kod ve prompt metni ayrı dosyalarda tutuluyor, burada sadece çağrı mantığı var).
-"""
+class ExtractorAgent(BaseAgent):
+    def extract(self, cv_text: str) -> ExtractedCV:
+        messages = [
+            {"role": "system", "content": EXTRACTOR_SYSTEM_PROMPT},
+            {"role": "user", "content": f"Bu CV'yi analiz et: {cv_text}"},
+        ]
+        return self._call_llm(messages=messages, response_model=ExtractedCV)
