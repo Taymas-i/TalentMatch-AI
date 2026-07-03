@@ -4,7 +4,7 @@ class RateLimitError(Exception):
 class LLMTimeoutError(Exception):
     pass
 
-class InvalidPDFEError(Exception):
+class FileParsingError(Exception):
     pass
 
 class HallucinationGuardError(Exception):
