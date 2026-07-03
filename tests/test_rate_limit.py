@@ -23,7 +23,7 @@ def test_concurrent_requests_respect_daily_limit():
     # Clean slate before the test
     db = SessionLocal()
     db.execute(
-        __import__("sqlalchemy").text(
+        text(
             "DELETE FROM user_limits WHERE user_id = :uid"
         ),
         {"uid": TEST_USER_ID},
