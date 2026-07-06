@@ -78,16 +78,18 @@ pytest -v
 
 ## Project Structure
 
+\`\`\`
 app/
 ├── agents/            # Extractor, Analyzer, Tailor agents
 ├── api/               # FastAPI routes and dependencies
 ├── core/              # Config, orchestrator, prompt templates, exceptions
 ├── models/            # SQLAlchemy database models
-├── schemas/           # Pydantic data contracts
-└── services/          # PDF/DOCX parsing, rate limiting
-tests/                 # pytest suite
-ui/                     # Streamlit frontend
-alembic/                # Database migrations
+├── schemas/            # Pydantic data contracts
+└── services/           # PDF/DOCX parsing, rate limiting
+tests/                   # pytest suite
+ui/                      # Streamlit frontend
+alembic/                 # Database migrations
+\`\`\`
 
 ## Notes
 
