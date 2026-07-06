@@ -5,10 +5,15 @@ class Experience(BaseModel):
     role: str
     description: str
 
+class Project(BaseModel):
+    name: str
+    description: str
+
 class ExtractedCV(BaseModel):
     full_name: str
     skills: list[str]
-    experiences: list[Experience]
+    experiences: list[Experience] = []
+    projects: list[Project] = []
     education: list[str]
 
 class MatchAnalysis(BaseModel):

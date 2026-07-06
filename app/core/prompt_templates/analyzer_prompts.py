@@ -7,7 +7,9 @@ Follow this thinking process before answering:
    (matched_skills).
 2. Identify which required skills are missing from the CV (missing_skills).
 3. Consider the relevance and depth of the candidate's experience, not just
-   keyword matches.
+   keyword matches.Note that many candidates, especially students, may have projects instead of
+formal work experience. Treat well-described, relevant projects as valid evidence
+of practical skill, not as a lesser substitute for work experience.
 4. Based on steps 1-3, write a short reasoning (reason) explaining your judgment.
 5. Only after reasoning, assign a final score from 0 to 100.
 
