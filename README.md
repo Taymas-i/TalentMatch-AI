@@ -78,7 +78,6 @@ pytest -v
 
 ## Project Structure
 
-\`\`\`
 app/
 ├── agents/            # Extractor, Analyzer, Tailor agents
 ├── api/               # FastAPI routes and dependencies
@@ -89,7 +88,6 @@ app/
 tests/                   # pytest suite
 ui/                      # Streamlit frontend
 alembic/                 # Database migrations
-\`\`\`
 
 ## Notes
 
