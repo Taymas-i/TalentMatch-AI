@@ -1,8 +1,0 @@
-* [33m7395535[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/alembic[m[33m)[m fix: save user_history.py content that wasn't saved before commit
-* [33mc6e2548[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/feature/models[m[33m, [m[1;32mmain[m[33m, [m[1;32mfeature/models[m[33m)[m feat: add SQLALchermy mdeols
-* [33m7485c09[m[33m ([m[1;31morigin/feature/schemas[m[33m, [m[1;32mfeature/schemas[m[33m)[m feat: add request/responses schemas
-* [33me405ac0[m feat: add pydanticschemas for agent contracts
-* [33m5deb1b6[m[33m ([m[1;31morigin/feature/exceptions[m[33m, [m[1;32mfeature/exceptions[m[33m)[m feat: add custom exeption classes
-* [33m1fb817b[m[33m ([m[1;31morigin/feature/config[m[33m, [m[1;32mfeature/config[m[33m)[m feat: add pydantic settings for env config
-* [33m3e9e13c[m feat: setup postgresql container with docker compose
-* [33m44380e3[m chore: initialize TalentMatch AI project skeleton and configuration
