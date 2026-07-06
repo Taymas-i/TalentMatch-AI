@@ -17,5 +17,17 @@ services:
       timeout: 5s
       retries: 5
 
+  api:
+    build: .
+    container_name: talentmatch_api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_HOST=db
+
 volumes:
   postgres_data:
